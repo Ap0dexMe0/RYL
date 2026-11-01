@@ -1,0 +1,13 @@
+/* CSS Document */
+@media (min-width: 992px) {
+	.banner_container { max-width:577px; width:98.296422487223168654173764906303%; margin:0 5px 5px 5px; }
+	.news_container { margin:5px 5px 5px 5px; padding:3px 5px 5px 5px; background-image:url(../img/main/box4.gif);
+					background-size:100% 135px; height:135px; text-align:left; max-width:577px; width:98.296422487223168654173764906303%; }
+	.news_container_content { margin:11px 0 6px 0; }
+}
+@media (max-width: 991px) {
+	.banner_container { max-width:522px; width:98.296422487223168654173764906303%; margin:0 5px 5px 5px; }
+	.news_container { margin:5px 5px 5px 5px; padding:3px 5px 5px 5px; background-image:url(../img/main/box4.gif);
+					background-size:100% 135px; height:135px; text-align:left; max-width:522px; width:98.296422487223168654173764906303%; }
+	.news_container_content { margin:11px 0 6px 0; }
+}

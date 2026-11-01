@@ -1,0 +1,56 @@
+/* CSS Document */
+
+.t7_gray {font-family:Tahoma;font-size:7pt;color:gray;line-height:12pt}
+.t8_gray {font-family:Tahoma;font-size:8pt;color:gray;}
+.t8_black {font-family:Tahoma;font-size:8pt;color:black;line-height:15px}
+.t9_black {font-family:Tahoma;font-size:9pt;color:black;}
+.t9_gray {font-family:Tahoma;font-size:9pt;color:gray;}
+.t8_d0 {font-family:Tahoma;font-size:8pt;color:#d0d0d0; line-height:15px}
+.t9b_gray {font-family:Tahoma;font-size:9pt;color:gray; font-weight:bold;}
+.t10_black {font-family:Tahoma; font-size:10pt; color:#000000;}
+.t10b_black {font-family:Tahoma; font-size:10pt; color:#000000; font-weight:bold;}
+.tr_rank {font-size:8pt; line-height:15px; background-color:#333333; text-align:center;}
+/*
+A:link    {color:#AAAAAA;text-decoration:none; font-size:12px;}
+A:visited {color:#AAAAAA;text-decoration:none; font-size:12px;}
+A:active  {color:#ad4700;text-decoration:none; font-size:12px;}
+A:hover	  {color:#ad4700;text-decoration:none; font-size:12px;}
+*/
+.footertext							{color: #AAAAAA; font-family:Tahoma; font-size:12px;}
+.footertext a:link					{color: #AAAAAA; text-decoration: none;}
+.footertext a:visited				{color: #AAAAAA; text-decoration: none;}
+.footertext a:active				{color: #FFF8C7; text-decoration: none;}
+.footertext a:hover					{color: #FFF8C7; text-decoration: none;}
+
+.maintext							{color: #AAAAAA; font-family:Tahoma; font-size:12px;}
+.maintext a:link					{color: #AAAAAA; text-decoration: none;}
+.maintext a:visited					{color: #AAAAAA; text-decoration: none;}
+.maintext a:active					{color: #FFF8C7; text-decoration: none;}
+.maintext a:hover					{color: #FFF8C7; text-decoration: none;}
+/*
+.bbs								{font-family:Tahoma;color:black;line-height:15px}
+.bbs A:link    						{color:#000000;text-decoration:none;}
+.bbs A:visited 						{color:#000000;text-decoration:none;}
+.bbs A:active  						{color:#ad4700;text-decoration:none;}
+.bbs A:hover						{color:#ad4700;text-decoration:none;}
+*/
+.title								{color:#FFFFFF;font-family:Tahoma;font-size:8pt;line-height:15px}
+.title A:link    					{color:#FFFFFF;text-decoration:none; font-size:8pt;}
+.title A:visited 					{color:#FFFFFF;text-decoration:none; font-size:8pt;}
+.title A:active  					{color:#FF0000;text-decoration:none; font-size:8pt;}
+.title A:hover						{color:#FF0000;text-decoration:none; font-size:8pt;}
+
+.AAAAAA							{color: #AAAAAA; font-weight: none;}
+.AAAAAA a:link					{color: #AAAAAA; text-decoration: none;}
+.AAAAAA a:visited				{color: #AAAAAA; text-decoration: none;}
+.AAAAAA a:active				{color: #FFF8C7; text-decoration: none;}
+.AAAAAA a:hover				{color: #FFF8C7; text-decoration: none;}
+
+
+/*TR,SELECT,form,option,div {
+	font-size:9pt;
+	font-family:Tahoma;
+	line-height: 15pt;
+}*/
+
+.title th {text-align: center;}

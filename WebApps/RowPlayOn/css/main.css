@@ -1,0 +1,13 @@
+/* CSS Document */
+@media (min-width: 992px) {
+	#main_container { max-width: 1032px; }
+	#left_container { max-width: 200px; width: 19.379844961240310077519379844961%; }
+	#center_container { max-width: 587px; width: 56.879844961240310077519379844961%; }
+	#right_container { max-width: 185px; width: 17.926356589147286821705426356589%; }
+}
+@media (max-width: 991px) {
+	#main_container { max-width: 991px; }
+	#left_container { max-width: 991px; width: 100%; clear: both; }
+	#center_container { max-width: 991px; width: 100%; clear: both; }
+	#right_container { max-width: 370px; width: 100%; clear: both; }
+}

@@ -1,0 +1,11 @@
+/* CSS Document */
+@media (min-width: 992px) {
+	#img_btn_container { max-width: 174px; height: 140px; }
+	#info_container { max-width: 174px; }
+	#time_info,#server_status,#contact { float: none; }
+}
+@media (max-width: 991px) {
+	#img_btn_container { max-width: 522px; height: 50px; }
+	#info_container { max-width: 522px; }
+	#time_info,#server_status,#contact { float: left; }
+}

@@ -1,0 +1,47 @@
+/* CSS Document */
+
+#menu_subpage{width:174px; background:url(../gamedata/images/bg_menu_gamedata.gif) top center no-repeat;}
+#menu_subpage ul{padding:0; margin:0; border:0;}
+#menu_subpage li{list-style:none; width:174px; height:29px; padding:0; margin:0;}
+#menu_subpage a{width:164px; height:29px; display:block;}
+#menu_subpage a:hover{background:url(../common_image/subleft_over.gif) top left no-repeat;}
+
+#left_contact{width:167px; height:53px; margin-top:20px;}
+#left_contact a.link1{background:url(../common_image/sub_contact.gif) center no-repeat; display:block; width:167px; height:53px;}
+#left_contact a.link1:hover{background:url(../common_image/sub_contact.gif) center no-repeat; display:block; width:167px; height:53px;}
+
+#skill_list tr{	font-size:8pt; font-family:Tahoma; line-height: 15pt;}
+#skill_list td{border-bottom:1px #999999 solid;}
+
+.nav-tabs li{text-align:center; font-weight:bold; padding:0 0 0 0;}
+.nav-tabs li:hover{text-align:center; font-weight:bold;}
+.nav-tabs li a{color:#646464; text-align:center; padding: 10px 0px 10px 0px;}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+	color: #fff;
+	background-color: #2b3d55;
+}
+
+#Gemtable_dt{height:30px;}
+#Gemtable_dd{height:40px;}
+#Gemtable_dt td{background:#eeeeee; text-align:center; line-height:12px; border:1px #000000 solid;}
+#Gemtable_dd td{background:#ffffff; text-align:center; line-height:12px; border-bottom:1px #000000 solid;}
+
+@media (min-width: 992px) {
+	#Gemtable_dt, td #Gemtable_dd td{font-size:11px;}
+}
+@media (max-width: 991px) {
+	#Gemtable_dt td, #Gemtable_dd td{font-size:9px;}
+	.nav-tabs li a{font-size:10px;}
+}
+
+
+.def_area{padding-bottom:15px;}
+.minititle{padding:15px;}
+.tdcontents{padding:10px;}
+
+/*
+#menu_subpage a.link1:hover{background:url(/gamedata/images/menu_gamedata_01.gif) top no-repeat;}
+#menu_subpage a.link2:hover{background:url(/gamedata/images/menu_gamedata_02.gif) top no-repeat;}
+#menu_subpage a.link3:hover{background:url(/gamedata/images/menu_gamedata_03.gif) top no-repeat;}
+#menu_subpage a.link4:hover{background:url(/gamedata/images/menu_gamedata_04.gif) top no-repeat;}
+*/

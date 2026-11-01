@@ -1,0 +1,31 @@
+/* CSS Document */
+@media (min-width: 992px) {
+	#login_container { max-width: 174px; width: 95%; }
+	#login_table { max-width: 182px; width: 95.789473684210526315789473684211%; }
+	#login_input_td { max-width: 107px; width: 58.791208791208791208791208791209%; }
+	#login_input_group { max-width: 107px; }
+	#login_input_group input { max-width: 105px; width: 98.130841121495327102803738317757%; height: 21px; }
+	#login_btn_td { max-width: 73px; width: 40.10989010989010989010989010989%; }
+	#login_btn_group { max-width: 73px; }
+	#login_btn_group button { max-width: 70px; width: 95.890410958904109589041095890411%; height: 44px; }
+}
+@media (min-width: 577px) and (max-width: 991px) {
+	#login_container { max-width: 522px; width: 100%; }
+	#login_table { max-width: 522px; width: 100%; }
+	#login_input_td { max-width: 310px; width: 58.270676691729323308270676691729%; }
+	#login_input_group { max-width: 310px; }
+	#login_input_group input { max-width: 304px; width: 98.064516129032258064516129032258%; height: 30px; }
+	#login_btn_td { max-width: 213px; width: 40.037593984962406015037593984962%; }
+	#login_btn_group { max-width: 213px; }
+	#login_btn_group button { max-width: 204px; width: 95.774647887323943661971830985915%; height: 60px; }
+}
+@media (max-width: 576px) {
+	#login_container { max-width: 522px; width: 98.296422487223168654173764906303%; }
+	#login_table { max-width: 522px; width: 98.296422487223168654173764906303%; }
+	#login_input_td { max-width: 310px; width: 58.270676691729323308270676691729%; }
+	#login_input_group { max-width: 310px; }
+	#login_input_group input { max-width: 304px; width: 98.064516129032258064516129032258%; height: 30px; }
+	#login_btn_td { max-width: 213px; width: 40.037593984962406015037593984962%; }
+	#login_btn_group { max-width: 213px; }
+	#login_btn_group button { max-width: 204px; width: 95.774647887323943661971830985915%; height: 60px; }
+}

@@ -1,0 +1,23 @@
+/* CSS Document */
+li { list-style:none; }
+a { text-decoration:none; color:#646464; }
+a:hover { text-decoration:none; }
+
+.zero_margin { margin:0 0 0 0; }
+.zero_padding { padding:0 0 0 0; }
+
+@media (min-width: 992px) {
+	.side_under_login { display:block; }
+	.right_side { display:block; }
+}
+@media (max-width: 991px) {
+	.side_under_login { display:none; }
+	.right_side { display:none; }
+}
+
+@media (min-width: 577px) {
+	.side_img_btns { display:block; }
+}
+@media (max-width: 576px) {
+	.side_img_btns { display:none; }
+}

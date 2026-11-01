@@ -1,0 +1,13 @@
+/* CSS Document */
+@media (min-width: 1201px) {
+	#main_content { width:580px; }
+	.gettingReady_table { margin:0 30px 0 30px; }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+	#main_content { width:530px; }
+	.gettingReady_table { margin:0 15px 0 15px; }
+}
+@media (max-width: 991px) {
+	#main_content { max-width:522px; width:98.296422487223168654173764906303%; }
+	.gettingReady_table { margin:0 0 0 0; }
+}

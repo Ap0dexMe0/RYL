@@ -1,0 +1,54 @@
+/* CSS Document */
+#row_li { width:14.3%; }
+.topmenu0_li { width:8.5%; }
+.topmenu1_li { width:9.8%; }
+.topmenu2_li { width:9.8%; }
+.topmenu3_li { width:8.5%; }
+.topmenu4_li { width:8.5%; }
+.topmenu5_li { width:8.5%; }
+.topmenu6_li { width:8.5%; }
+.topmenu7_li { width:8.2727272727272727272727272727273%; }
+
+.navbar-nav { padding:0 0 0 0; }
+
+#navbar button { margin:0 0 0 0; padding:0 0 0 0; border:none; display:none; }
+
+#navbar .dropdown-menu{z-index:10000; background:none; margin:0 0 0 0; padding:0 0 0 0; border:none; box-shadow:none;}
+#navbar .dropdown-menu ul{margin:0 0 0 0; padding:0 0 0 0; background:url(../img/menu/menu-back.gif); border:none; width:154px; overflow:hidden;}
+#navbar .dropdown-menu li{list-style:none; width:126px; height:20px; display:block; padding:7px 0 0 0; padding-left:14px;}
+#navbar .dropdown-menu a{width:120px; height:20px; display:block; font-family:Arial, Helvetica, sans-serif; text-decoration:none; text-align:left; font-size:12px; color:#d9d9d9; vertical-align:bottom;}
+#navbar .dropdown-menu a:hover{background:url(../img/menu/menu-ov.gif);}
+
+@media (min-width: 992px) {
+	#navbar .dropdown-menu{top:60px;}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	#navbar .dropdown-menu{top:45px;}
+}
+@media (min-width: 768px) {
+	.navbar-static-top { background-size: auto 100%; }
+
+	.topmenu0_li ul{height:138px;}
+	.topmenu1_li ul{height:243px;}
+	.topmenu2_li ul{height:182px;}
+	.topmenu3_li ul{height:121px;}
+	.topmenu4_li ul{height:200px;}
+	.topmenu5_li ul{height:33px;}
+	.topmenu6_li ul{height:90px;}
+	.topmenu7_li ul{height:60px;}
+}
+
+@media (max-width: 767px) {
+	.navbar-static-top { background-size: 32px 50px; }
+	.navbar-nav { margin: 0 0 0 0; padding: 0 0 0 0; }
+	.navbar-nav img { height: 50px; max-width: none; }
+
+	.topmenu0_li ul{height:150px;}
+	.topmenu1_li ul{height:250px;}
+	.topmenu2_li ul{height:200px;}
+	.topmenu3_li ul{height:150px;}
+	.topmenu4_li ul{height:200px;}
+	.topmenu5_li ul{height:50px;}
+	.topmenu6_li ul{height:100px;}
+	.topmenu7_li ul{height:60px;}
+}

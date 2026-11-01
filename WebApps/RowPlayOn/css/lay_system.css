@@ -1,0 +1,36 @@
+/* CSS Document */
+
+#menu_subpage{width:174px; background:url(../system/images/bg_menu_system.gif) top center no-repeat;}
+#menu_subpage ul{padding:0; margin:0; border:0;}
+#menu_subpage li{list-style:none; width:174px; height:29px; padding:0; margin:0;}
+#menu_subpage a{width:164px; height:29px; display:block;}
+#menu_subpage a:hover{background:url(../common_image/subleft_over.gif) top left no-repeat;}
+
+#left_contact{width:167px; height:53px; margin-top:20px;}
+#left_contact a.link1{background:url(../common_image/sub_contact.gif) center no-repeat; display:block; width:167px; height:53px;}
+#left_contact a.link1:hover{background:url(../common_image/sub_contact.gif) center no-repeat; display:block; width:167px; height:53px;}
+
+#eximage{float:left; padding:0 10px 0 10px;}
+#desc{float:left; text-align:left; padding:10px 10px 0 10px;}
+#eximage1{float:left; padding:0 10px 0 10px;}
+#desc1{float:left; text-align:justify; padding:10px 10px 0 10px;}
+#eximage2{float:left; padding:0 10px 0 10px;}
+#desc2{float:left; text-align:justify; padding:10px 10px 0 10px;}
+#desc3{float:left; text-align:justify; padding:10px 10px 0 10px;}
+#step{clear:both; padding:15px 0 0 0;}
+
+.def_area{padding-bottom:15px;}
+.minititle{padding:15px;}
+.tdcontents{padding:10px;}
+
+/*
+#menu_subpage a.link1:hover{background:url(/system/images/menu_system_01.gif) top no-repeat;}
+#menu_subpage a.link2:hover{background:url(/system/images/menu_system_02.gif) top no-repeat;}
+#menu_subpage a.link3:hover{background:url(/system/images/menu_system_03.gif) top no-repeat;}
+#menu_subpage a.link4:hover{background:url(/system/images/menu_system_04.gif) top no-repeat;}
+#menu_subpage a.link5:hover{background:url(/system/images/menu_system_05.gif) top no-repeat;}
+#menu_subpage a.link6:hover{background:url(/system/images/menu_system_06.gif) top no-repeat;}
+#menu_subpage a.link7:hover{background:url(/system/images/menu_system_07.gif) top no-repeat;}
+#menu_subpage a.link6:hover{background:url(/system/images/menu_system_08.gif) top no-repeat;}
+#menu_subpage a.link7:hover{background:url(/system/images/menu_system_09.gif) top no-repeat;}
+*/

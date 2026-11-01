@@ -1,0 +1,36 @@
+/* CSS Document */
+
+#menu_subpage{width:174px; background:url(../guide/images/bg_menu_guide.gif) top center no-repeat;}
+#menu_subpage ul{padding:0; margin:0; border:0;}
+#menu_subpage li{list-style:none; width:174px; height:29px; padding:0; margin:0;}
+#menu_subpage a{width:164px; height:29px; display:block;}
+#menu_subpage a:hover{background:url(../common_image/subleft_over.gif) top left no-repeat;}
+
+#left_contact{width:167px; height:53px; margin-top:20px;}
+#left_contact a.link1{background:url(../common_image/sub_contact.gif) center no-repeat; display:block; width:167px; height:53px;}
+#left_contact a.link1:hover{background:url(../common_image/sub_contact.gif) center no-repeat; display:block; width:167px; height:53px;}
+
+.def_area{padding-bottom:15px;}
+.minititle{padding:15px;}
+#hotkey{max-width:400px; width:100%; border:none;}
+#hotkey td{text-align:justify; padding-left:10px;}
+
+#shortcut tt{background:#eee; border-top:3px solid #cccccc; border-right:3px solid #999999; border-bottom:3px solid #999999; border-left:3px solid #cccccc; padding:3px 5px 0 3px;; text-align:center;}
+#shortcut td{border-bottom:1px #ffffff solid; background:#eeeeee;}
+#chat_shortcut tt{background:#eee; border-top:3px solid #cccccc; border-right:3px solid #999999; border-bottom:3px solid #999999; border-left:3px solid #cccccc; padding:3px 5px 0 3px;; text-align:center;}
+
+#skill_type td{vertical-align:top; background-color:#eeeeee;}
+#skill_type ul{padding:0 0 0 15px; margin:0; }
+
+/*
+#menu_subpage a.link1:hover{background:url(/guide/images/menu_guide_01.gif) top no-repeat;}
+#menu_subpage a.link2:hover{background:url(/guide/images/menu_guide_02.gif) top no-repeat;}
+#menu_subpage a.link3:hover{background:url(/guide/images/menu_guide_03.gif) top no-repeat;}
+#menu_subpage a.link4:hover{background:url(/guide/images/menu_guide_04.gif) top no-repeat;}
+#menu_subpage a.link5:hover{background:url(/guide/images/menu_guide_05.gif) top no-repeat;}
+#menu_subpage a.link6:hover{background:url(/guide/images/menu_guide_06.gif) top no-repeat;}
+#menu_subpage a.link7:hover{background:url(/guide/images/menu_guide_07.gif) top no-repeat;}
+#menu_subpage a.link5:hover{background:url(/guide/images/menu_guide_08.gif) top no-repeat;}
+#menu_subpage a.link6:hover{background:url(/guide/images/menu_guide_09.gif) top no-repeat;}
+#menu_subpage a.link7:hover{background:url(/guide/images/menu_guide_10.gif) top no-repeat;}
+*/

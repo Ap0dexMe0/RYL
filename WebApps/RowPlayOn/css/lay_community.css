@@ -1,0 +1,17 @@
+/* CSS Document */
+
+#menu_subpage{width:174px; background:url(../community/images/bg_menu_community.gif) top center no-repeat;}
+#menu_subpage ul{padding:0; margin:0; border:0;}
+#menu_subpage li{list-style:none; width:174px; height:29px; padding:0; margin:0;}
+#menu_subpage a{width:164px; height:29px; display:block;}
+#menu_subpage a:hover{background:url(../common_image/subleft_over.gif) top left no-repeat;}
+
+#left_contact{width:167px; height:53px; margin-top:20px;}
+#left_contact a.link1{background:url(../common_image/sub_contact.gif) center no-repeat; display:block; width:167px; height:53px;}
+#left_contact a.link1:hover{background:url(../common_image/sub_contact.gif) center no-repeat; display:block; width:167px; height:53px;}
+/*
+#menu_subpage a.link1:hover{background:url(/community/images/menu_community_01.gif) top no-repeat;}
+#menu_subpage a.link2:hover{background:url(/community/images/menu_community_02.gif) top no-repeat;}
+#menu_subpage a.link3:hover{background:url(/community/images/menu_community_03.gif) top no-repeat;}
+#menu_subpage a.link4:hover{background:url(/community/images/menu_community_04.gif) top no-repeat;}
+*/
