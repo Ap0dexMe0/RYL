@@ -1,0 +1,118 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>launcher</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>True</UseWPF>
+    <UseWindowsForms>True</UseWindowsForms>
+    <TargetFramework>net462</TargetFramework>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="costura.bouncycastle.crypto.dll.compressed" />
+    <None Remove="costura.costura.dll.compressed" />
+    <None Remove="costura.icsharpcode.sharpziplib.dll.compressed" />
+    <None Remove="costura.microsoft.web.webview2.core.dll.compressed" />
+    <None Remove="costura.microsoft.web.webview2.winforms.dll.compressed" />
+    <None Remove="costura.microsoft.web.webview2.wpf.dll.compressed" />
+    <None Remove="costura.microsoft.win32.primitives.dll.compressed" />
+    <None Remove="costura.system.appcontext.dll.compressed" />
+    <None Remove="costura.system.console.dll.compressed" />
+    <None Remove="costura.system.diagnostics.diagnosticsource.dll.compressed" />
+    <None Remove="costura.system.diagnostics.tracing.dll.compressed" />
+    <None Remove="costura.system.globalization.calendars.dll.compressed" />
+    <None Remove="costura.system.io.compression.dll.compressed" />
+    <None Remove="costura.system.io.compression.zipfile.dll.compressed" />
+    <None Remove="costura.system.io.dll.compressed" />
+    <None Remove="costura.system.io.filesystem.dll.compressed" />
+    <None Remove="costura.system.io.filesystem.primitives.dll.compressed" />
+    <None Remove="costura.system.net.http.dll.compressed" />
+    <None Remove="costura.system.net.sockets.dll.compressed" />
+    <None Remove="costura.system.reflection.dll.compressed" />
+    <None Remove="costura.system.runtime.dll.compressed" />
+    <None Remove="costura.system.runtime.extensions.dll.compressed" />
+    <None Remove="costura.system.runtime.interopservices.dll.compressed" />
+    <None Remove="costura.system.runtime.interopservices.runtimeinformation.dll.compressed" />
+    <None Remove="costura.system.security.cryptography.algorithms.dll.compressed" />
+    <None Remove="costura.system.security.cryptography.encoding.dll.compressed" />
+    <None Remove="costura.system.security.cryptography.primitives.dll.compressed" />
+    <None Remove="costura.system.security.cryptography.x509certificates.dll.compressed" />
+    <None Remove="costura.system.xml.readerwriter.dll.compressed" />
+    <EmbeddedResource Include="costura.bouncycastle.crypto.dll.compressed" LogicalName="costura.bouncycastle.crypto.dll.compressed" />
+    <EmbeddedResource Include="costura.costura.dll.compressed" LogicalName="costura.costura.dll.compressed" />
+    <EmbeddedResource Include="costura.icsharpcode.sharpziplib.dll.compressed" LogicalName="costura.icsharpcode.sharpziplib.dll.compressed" />
+    <EmbeddedResource Include="costura.microsoft.web.webview2.core.dll.compressed" LogicalName="costura.microsoft.web.webview2.core.dll.compressed" />
+    <EmbeddedResource Include="costura.microsoft.web.webview2.winforms.dll.compressed" LogicalName="costura.microsoft.web.webview2.winforms.dll.compressed" />
+    <EmbeddedResource Include="costura.microsoft.web.webview2.wpf.dll.compressed" LogicalName="costura.microsoft.web.webview2.wpf.dll.compressed" />
+    <EmbeddedResource Include="costura.microsoft.win32.primitives.dll.compressed" LogicalName="costura.microsoft.win32.primitives.dll.compressed" />
+    <EmbeddedResource Include="costura.system.appcontext.dll.compressed" LogicalName="costura.system.appcontext.dll.compressed" />
+    <EmbeddedResource Include="costura.system.console.dll.compressed" LogicalName="costura.system.console.dll.compressed" />
+    <EmbeddedResource Include="costura.system.diagnostics.diagnosticsource.dll.compressed" LogicalName="costura.system.diagnostics.diagnosticsource.dll.compressed" />
+    <EmbeddedResource Include="costura.system.diagnostics.tracing.dll.compressed" LogicalName="costura.system.diagnostics.tracing.dll.compressed" />
+    <EmbeddedResource Include="costura.system.globalization.calendars.dll.compressed" LogicalName="costura.system.globalization.calendars.dll.compressed" />
+    <EmbeddedResource Include="costura.system.io.compression.dll.compressed" LogicalName="costura.system.io.compression.dll.compressed" />
+    <EmbeddedResource Include="costura.system.io.compression.zipfile.dll.compressed" LogicalName="costura.system.io.compression.zipfile.dll.compressed" />
+    <EmbeddedResource Include="costura.system.io.dll.compressed" LogicalName="costura.system.io.dll.compressed" />
+    <EmbeddedResource Include="costura.system.io.filesystem.dll.compressed" LogicalName="costura.system.io.filesystem.dll.compressed" />
+    <EmbeddedResource Include="costura.system.io.filesystem.primitives.dll.compressed" LogicalName="costura.system.io.filesystem.primitives.dll.compressed" />
+    <EmbeddedResource Include="costura.system.net.http.dll.compressed" LogicalName="costura.system.net.http.dll.compressed" />
+    <EmbeddedResource Include="costura.system.net.sockets.dll.compressed" LogicalName="costura.system.net.sockets.dll.compressed" />
+    <EmbeddedResource Include="costura.system.reflection.dll.compressed" LogicalName="costura.system.reflection.dll.compressed" />
+    <EmbeddedResource Include="costura.system.runtime.dll.compressed" LogicalName="costura.system.runtime.dll.compressed" />
+    <EmbeddedResource Include="costura.system.runtime.extensions.dll.compressed" LogicalName="costura.system.runtime.extensions.dll.compressed" />
+    <EmbeddedResource Include="costura.system.runtime.interopservices.dll.compressed" LogicalName="costura.system.runtime.interopservices.dll.compressed" />
+    <EmbeddedResource Include="costura.system.runtime.interopservices.runtimeinformation.dll.compressed" LogicalName="costura.system.runtime.interopservices.runtimeinformation.dll.compressed" />
+    <EmbeddedResource Include="costura.system.security.cryptography.algorithms.dll.compressed" LogicalName="costura.system.security.cryptography.algorithms.dll.compressed" />
+    <EmbeddedResource Include="costura.system.security.cryptography.encoding.dll.compressed" LogicalName="costura.system.security.cryptography.encoding.dll.compressed" />
+    <EmbeddedResource Include="costura.system.security.cryptography.primitives.dll.compressed" LogicalName="costura.system.security.cryptography.primitives.dll.compressed" />
+    <EmbeddedResource Include="costura.system.security.cryptography.x509certificates.dll.compressed" LogicalName="costura.system.security.cryptography.x509certificates.dll.compressed" />
+    <EmbeddedResource Include="costura.system.xml.readerwriter.dll.compressed" LogicalName="costura.system.xml.readerwriter.dll.compressed" />
+    <ApplicationDefinition Remove="launcher2\App.xaml" />
+    <ApplicationDefinition Include="launcher2\App.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="app.xaml" />
+    <Page Remove="launcher2\LoginWindow.xaml" />
+    <Page Remove="launcher2\MainWindow.xaml" />
+    <Page Remove="launcher2\SettingWindow.xaml" />
+    <Page Remove="launcher2\WebWindow.xaml" />
+    <Page Remove="themes_res\bureaublack.xaml" />
+    <Page Remove="themes_res\bureaublue.xaml" />
+    <Page Remove="themes_res\expressiondark.xaml" />
+    <Page Remove="themes_res\expressionlight.xaml" />
+    <Page Remove="themes_res\mystyle.xaml" />
+    <Page Remove="themes_res\shinyblue.xaml" />
+    <Page Remove="themes_res\shinyred.xaml" />
+    <Page Remove="themes_res\whistlerblue.xaml" />
+    <Page Include="launcher2\LoginWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="windows/loginwindow.xaml" />
+    <Page Include="launcher2\MainWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="windows/mainwindow.xaml" />
+    <Page Include="launcher2\SettingWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="windows/settingwindow.xaml" />
+    <Page Include="launcher2\WebWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="windows/webwindow.xaml" />
+    <Page Include="themes_res\bureaublack.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="themes_res/bureaublack.xaml" />
+    <Page Include="themes_res\bureaublue.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="themes_res/bureaublue.xaml" />
+    <Page Include="themes_res\expressiondark.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="themes_res/expressiondark.xaml" />
+    <Page Include="themes_res\expressionlight.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="themes_res/expressionlight.xaml" />
+    <Page Include="themes_res\mystyle.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="themes_res/mystyle.xaml" />
+    <Page Include="themes_res\shinyblue.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="themes_res/shinyblue.xaml" />
+    <Page Include="themes_res\shinyred.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="themes_res/shinyred.xaml" />
+    <Page Include="themes_res\whistlerblue.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="themes_res/whistlerblue.xaml" />
+    <Resource Remove="row.ico" />
+    <Resource Include="row.ico" LogicalName="row.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Management" />
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf" />
+    <Reference Include="Microsoft.Web.WebView2.Core" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+</Project>

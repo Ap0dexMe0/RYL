@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application x:Class="launcher2.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:launcher2="clr-namespace:launcher2;assembly=launcher">
+  <Application.Resources>
+    <ResourceDictionary Source="Themes_Res/MyStyle.xaml" />
+  </Application.Resources>
+</Application>
