@@ -1,0 +1,52 @@
+From MOUSE mode, press ESC, W, A, S, or D to switch into KEYBOARD mode. 
+To view the MAP of the area you are currently in, press the L key. 
+Abusing a bug for personal gain will result in immediate banning without warning.
+Abuse your account = Lose your account.
+Type /s <playername> <message> to whisper to another player.
+Type /p <message> to chat with all party members.
+When not in chat mode, press M to reply to a whispered message.
+Press R to switch to Auto-Run mode.
+You may upgrade your class after reaching level 10.
+SKILL POINTS increase after upgrading your class, you can learn various skills equal to the amount of Skill Points you have.
+Taunting causes a monster to attack you.
+Ex. ATTACK is the percentage of extra damage that is added to the final damage calculation.
+Ex. DEFENSE is the percentage of damage that is decreased from the final damage calculation.
+When STRENGTH (STR) increases, the amount of damage inflicted in close combat increases as well.
+When DEXTERITY (DEX) increases, speed of movement, cool-down time, critical rate, and Ex. Defense increase as well.
+When CONSTITUTION (CON) increases, the maximum HP and HP recovery amount increases.
+When INTELLIGENCE (INT) increases, the Mage, Sorcerer, Enchanter, and Rune Officiator skills increase in power.
+When INT increases, the amount of skill points available increases.
+When WISDOM (WIS) increases, Acolytes, Priests, Clerics, and Life Officiator skills increase in power.
+When WIS or INT is raised (whichever is higher), the maximum MP increases. 
+MP recovery time increases according to the sum of INT and WIS.
+Press C to rest and recover HP and MP faster.
+Learning PASSIVE skills will improve your damage output for that skill.
+PASSIVE skills cannot be placed into the quick slot bar.
+K opens the SKILL window.
+I opens INVENTORY.
+U opens STATUS window.
+Y opens SOCIETY window.
+T opens the QUEST window.
+Press F12 to take a screenshot.
+Press F11 to open the Options window.
+Skills in the QUICK SLOT bar may be selected by pressing keys 1~0.
+You can place INSTANCE, CAST, and CHANT skills into the quick slot bar.
+Items like bread, meat, and roast meat can be placed in the quick slot bar.
+To use SPECIAL skills, select the appropriate skill from the quick slot (by pressing 1~0) and right-click.
+To CAST a spell, select it and hold the right mouse button to charge your spell before letting go to complete the spell.
+If you are attacked while casting a spell, the casting will be cancelled.
+To use a CHANT, select it from the quick slot.
+Use Z and X to switch between the first and second quick slots banks.
+If you are human, press Q to change to the second weapon slot.
+Hold down the middle mouse button to shift the camera angle with the mouse.
+In MOUSE mode, you can turn the camera with the spacebar.
+In KEYBOARD mode, press ESC to return to mouse mode.
+Lower skills of other classes can only be learned after changing your class at level 10.
+To redistribute STAT POINTS, you need a Stone of Oblivion, and you need to visit the Adventurer’s Trainer or Beginner’s Trainer.
+Teleport Scrolls have a 15 second delay.
+If you die while using a Teleport Scroll, the spell will be cancelled.
+If you move while trying to use a Teleport Scroll, the spell will be cancelled.
+A Teleport Scroll can be purchased at the general store of any town.
+Teleport Scrolls can be placed into your quick slot bar.
+You have 2.5 minutes to pick up an item / gold that is dropped from a monster.
+You can start a whisper by clicking on a character's chat line in the chat window.

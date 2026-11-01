@@ -1,0 +1,210 @@
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////																							/////////////
+/////////////								■ Monster Chat Script ■							/////////////
+/////////////						< Main Operator : Choi Ki-hoon >						/////////////
+/////////////																							/////////////		
+/////////////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////										Function List									/////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
+void MonsterChat(int, int, int, int, int, string); // KID, ?????, ??? ??ID, ????, ??, ?????
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////										Definition										/////////////
+/////////////////////////////////////////////////////////////////////////////////////  
+//
+//		?? ID
+//	
+//		????			=0	
+//		???? ???	=1	
+//		???? ??		=2	
+//		???? ???	=3	
+//		???? ??		=4	
+//		???? ???	=5	
+//		???				=6
+//		??					=7
+//						
+/////////////////////////////////////////////////////////////////////////////////////
+//
+//		?? ID	
+//							
+//		??					=255	
+//		??					=0		
+//		???				=7		
+//					
+/////////////////////////////////////////////////////////////////////////////////////
+//
+//		Skill ID
+//		
+//		?? Skill			=0xFFFF	
+//						
+/////////////////////////////////////////////////////////////////////////////////////
+//
+//		$KILLERNAME$		會取代為殺者(怪物)的名稱. 行動ID要在7次(死亡)的情況才可以
+//		$ATTNAME$			會取代為攻擊者(怪物)的名稱. 行動ID是 1, 3, 5 (被攻擊時)時才會取代
+//		$DEFNAME$			會取代為被攻擊者(怪物)的名稱. 行動ID是0, 2, 4 (攻擊時)時才可以取代(被攻擊者很多的情況, 由random)
+//
+//		KID, 怪物行動, 怪物技能ID, 與聊天種類一樣的情況, 機率會加起來計算.
+//
+/////////////////////////////////////////////////////////////////////////////////////
+//
+//		ex 
+//
+//		MonsterChat(4001, 2, 0xFFFF, 0, 20, "使用技能時聊天訊息1");
+//		MonsterChat(4001, 2, 0xFFFF, 0, 20, "使用技能時聊天訊息2");
+//		(任意選擇1~100的數字, 上面的訊息是1~20, 下面的訊息是21~40. 除外的數字不會顯示.) 
+//		不是復活的情況對話的前面會出現怪物名稱.
+//
+/////////////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////											Notice										/////////////
+/////////////////////////////////////////////////////////////////////////////////////  
+//																															//
+//	TS	 1030																												//
+//	2004-09-13	Operator Choi Ki-hoon																			//
+//	1. ?? ??																										//
+//	2. ??? -> ??? ?? ?? ??																		//
+//																															//
+/////////////////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////									Named Monster									/////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
+//merman
+//MonsterChat(1, 6, 0, 7, 100, "'Ah~~ ,Finally ... i had arrive to this world!'");
+MonsterChat(1, 4, 0, 0, 10, "Please !! Don't Kill me !");
+MonsterChat(1, 4, 0, 0, 10, "T.T why you want to bully me?");
+MonsterChat(1, 4, 0, 0, 50, "T.T why you want to bully me?");
+MonsterChat(1, 4, 0, 0, 50, "$DEFNAME$, i hate you.");
+MonsterChat(1, 7, 0, 0, 100, "No!!!- $KILLERNAME$, i hate you!");
+//MonsterChat(1, 7, 0, 255, 100, "No!!!- [$KILLERNAME$], you defeated me! you will pay for this");
+
+//骷髏大王
+MonsterChat(4001, 6, 0, 255, 100, "Almighty Deathly Forest [Skeleton Kingz] Revive from the death .");
+MonsterChat(4001, 2, 0xFFFF, 0, 10, "$DEFNAME$ , get lost  don't get closer....");
+MonsterChat(4001, 2, 0xFFFF, 0, 10, "$DEFNAME$ I warning you.. better get away...");
+MonsterChat(4001, 4, 0, 0, 50, "I won't let you pass through here..");
+MonsterChat(4001, 4, 0, 0, 50, "I will protect here ..");
+MonsterChat(4001, 7, 0, 7, 100, "I ..... don't .....wanna .....  dieeeeeee ..... !!!!.");
+MonsterChat(4001, 7, 0, 255, 100, "[$KILLERNAME$] has defect the [Skeleton Kingz].");
+
+//Nymbus
+MonsterChat(4002, 6, 0, 255, 100, "'I can feel the existence of a life form that is not supposed to exist.'");
+MonsterChat(4002, 2, 0xFFFF, 0, 10, "The land is my food. I obtain my power by absorbing the blood of the land.");
+MonsterChat(4002, 2, 0xFFFF, 0, 10, "The land is mine. It is my life.");
+MonsterChat(4002, 4, 0, 0, 50, "You should go back to where you belong.");
+MonsterChat(4002, 4, 0, 0, 50, "The land does not welcome you $DEFNAME$.");
+MonsterChat(4002, 7, 0, 7, 100, "..$KILLERNAME$ Do not be too happy..I shall return to avenge my death.");
+MonsterChat(4002, 7, 0, 255, 100, "..[$KILLERNAME$] Do not be too happy..I shall return to avenge my death.");
+
+//Lion King
+MonsterChat(4003, 6, 0, 255, 100, "'I can hear the roaring of a lion from north east of the land whenever the winds blow.'");
+MonsterChat(4003, 2, 0xFFFF, 0, 10, "Hahaha!! $DEFNAME$, it is better to escape now!");
+MonsterChat(4003, 2, 0xFFFF, 0, 10, "$DEFNAME$, I will not let go you even you beg for your life!");
+MonsterChat(4003, 4, 0, 0, 50, "You will bow before me!");
+MonsterChat(4003, 4, 0, 0, 50, "$DEFNAME$, you will bound before my powers!");
+MonsterChat(4003, 7, 0, 7, 100, "Arg.. $KILLERNAME$. You are indeed strong..");
+MonsterChat(4003, 7, 0, 255, 100, "Arg.. [$KILLERNAME$]. You are indeed strong..");
+
+//SK
+MonsterChat(4004, 6, 0, 255, 100, "'This great Ak'Kan land is gradually becoming infested with the breath of evil.'");
+MonsterChat(4004, 2, 0xFFFF, 0, 10, "$DEFNAME$ ,Can you feel the destruction of life?");
+MonsterChat(4004, 2, 0xFFFF, 0, 10, "$DEFNAME$,The thing that welcomes brave people the most-is DEATH.");
+MonsterChat(4004, 4, 0, 0, 50, "I will take your soul!!!");
+MonsterChat(4004, 4, 0, 0, 50, "$DEFNAME$, this is the last time you see your soul!");
+MonsterChat(4004, 7, 0, 7, 100, "$KILLERNAME$..death awaits you!");
+MonsterChat(4004, 7, 0, 255, 100, "$KILLERNAME$..death awaits you!");
+
+//Queen Of Pain
+MonsterChat(4005, 6, 0, 255, 100, " Almighty Deathly Forest [Queen Of Pain] Revive from the death.");
+MonsterChat(4005, 2, 0xFFFF, 0, 10, "$DEFNAME$, Oh Dear ..");
+MonsterChat(4005, 2, 0xFFFF, 0, 10, "$DEFNAME$,Come on Baby");
+MonsterChat(4005, 4, 0, 0, 50, "Don't let me look down on you..");
+MonsterChat(4005, 4, 0, 0, 50, "come on you can do it..");
+MonsterChat(4005, 7, 0, 7, 100, "mm..$KILLERNAME$ that what I like it ..");
+MonsterChat(4005, 7, 0, 255, 100, "mm..[$KILLERNAME$] that what I like it ...");
+ 
+//Abomy
+MonsterChat(4006, 6, 0, 255, 100, " This land is filled with the smell of blood!.");
+MonsterChat(4006, 2, 0xFFFF, 0, 10, " $DEFNAME$ Do not let your guard down - I will come to you soon!.");
+MonsterChat(4006, 2, 0xFFFF, 0, 10, "haha. $DEFNAME$. I can't believe you are so weak");
+MonsterChat(4006, 4, 0, 0, 50, " Hahahaha. Such a weakling! You will bow to me!");
+MonsterChat(4006, 4, 0, 0, 50, "hahahaha. $DEFNAME$, does it hurt?");
+MonsterChat(4006, 7, 0, 7, 100, " Argh - $KILLERNAME$, curse you! I shall have my revenge!");
+MonsterChat(4006, 7, 0, 255, 100, "Argh - [$KILLERNAME$], curse you! I shall have my revenge!.");
+
+//3 head
+MonsterChat(99, 6, 0, 255, 100, "Gavial Swamp Valley [Three Head] has Show His Self.");
+MonsterChat(99, 2, 0xFFFF, 0, 10, "~~~~~~blizzz~~~");
+MonsterChat(99, 2, 0xFFFF, 0, 10, "sha ah~~ sha ah~~");
+MonsterChat(99, 4, 0, 0, 50, "chi~~~~");
+MonsterChat(99, 4, 0, 0, 50, "chi~~~~");
+MonsterChat(99, 7, 0, 7, 100, "~~~~~~~~..$KILLERNAME$..");
+MonsterChat(99, 7, 0, 255, 100, "~~~~~~~~..[$KILLERNAME$]...");
+
+//Cyclop King
+MonsterChat(166, 6, 0, 255, 100, "[Cyclop King] is spawn out.");
+MonsterChat(166, 2, 0xFFFF, 0, 10, "... what is this.. an ant!!?");
+MonsterChat(166, 2, 0xFFFF, 0, 10, "i will help you end it-.");
+MonsterChat(166, 4, 0, 0, 50, "hmm? many ant arround me-?");
+MonsterChat(166, 4, 0, 0, 50, "i'm angry now-!");
+MonsterChat(166, 7, 0, 7, 100, "....$KILLERNAME$..you are strong..");
+MonsterChat(166, 7, 0, 255, 100, "....$KILLERNAME$..you are strong...");
+
+//邪神
+MonsterChat(4007, 6, 0, 255, 100, "[Diablo] has arrive to our land .");
+MonsterChat(4007, 2, 0xFFFF, 0, 10, "Do you think you can beat me..?");
+MonsterChat(4007, 2, 0xFFFF, 0, 10, "die~~ you ants..");
+MonsterChat(4007, 4, 0, 0, 50, "imposible you can go this far..");
+MonsterChat(4007, 4, 0, 0, 50, "i will kill you ~~.");
+MonsterChat(4007, 7, 0, 7, 100, "$KILLERNAME$- Don't think this will be end..");
+MonsterChat(4007, 7, 0, 255, 100, "[$KILLERNAME$] has defect the [Diablo].");
+
+//mini boss
+MonsterChat(4008, 7, 0, 255, 100, "[$KILLERNAME$] has defect the [Mini Deadly Skeleton].");
+
+MonsterChat(4009, 7, 0, 255, 100, "[$KILLERNAME$] has defect the [Mini Flame Demon].");
+
+MonsterChat(4010, 7, 0, 255, 100, "[$KILLERNAME$] has defect the [Mini Lion].");
+
+MonsterChat(4011, 7, 0, 255, 100, "[$KILLERNAME$] has defect the [Mini SK].");
+
+MonsterChat(4012, 7, 0, 255, 100, "[$KILLERNAME$] has defect the [MiniQueen Of Pain].");
+
+MonsterChat(4013, 7, 0, 255, 100, "[$KILLERNAME$] has defect the [Mini Abomy].");
+
+MonsterChat(4014, 7, 0, 255, 100, "[$KILLERNAME$] has defect the [Mini Diablo].");
+
+//Gaint boss
+MonsterChat(4007, 6, 0, 255, 100, "Giant Deadly Skeleton Has Spawn !!!!!!! .");
+MonsterChat(4015, 7, 0, 255, 100, "[$KILLERNAME$] has defect the [Giant Deadly Skeleton].");
+
+MonsterChat(4007, 6, 0, 255, 100, "Giant Flame Demon has Spawn !!!!!!!.");
+MonsterChat(4016, 7, 0, 255, 100, "[$KILLERNAME$] has defect the [Giant Flame Demon].");
+
+MonsterChat(4007, 6, 0, 255, 100, "Giant Lion King has Spawn !!!!!!!.");
+MonsterChat(4017, 7, 0, 255, 100, "[$KILLERNAME$] has defect the [Giant Lion King].");
+
+MonsterChat(4007, 6, 0, 255, 100, "Giant SK has Spawn !!!!!!!.");
+MonsterChat(4018, 7, 0, 255, 100, "[$KILLERNAME$] has defect the [Giant SK].");
+
+MonsterChat(4007, 6, 0, 255, 100, "Giant Queen Of Pain has Spawn !!!!!!!.");
+MonsterChat(4019, 7, 0, 255, 100, "[$KILLERNAME$] has defect the [Giant Queen Of Pain].");
+
+MonsterChat(4007, 6, 0, 255, 100, "Giant Abomy has Spawn !!!!!!!.");
+MonsterChat(4020, 7, 0, 255, 100, "[$KILLERNAME$] has defect the [Giant Abomy].");
+
+MonsterChat(4007, 6, 0, 255, 100, "Giant Diablo has Spawn !!!!!!!.");
+MonsterChat(4021, 7, 0, 255, 100, "[$KILLERNAME$] has defect the [Giant Diablo].");
+

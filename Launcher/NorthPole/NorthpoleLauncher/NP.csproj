@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>NorthpoleLauncher</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>True</UseWPF>
+    <TargetFramework>net8.0-windows7.0</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Remove="NorthpoleLauncher\App.xaml" />
+    <ApplicationDefinition Include="NorthpoleLauncher\App.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="app.xaml" />
+    <Page Remove="NorthpoleLauncher\MainWindow.xaml" />
+    <Page Include="NorthpoleLauncher\MainWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="mainwindow.xaml" />
+    <Resource Remove="assets\background.jpg" />
+    <Resource Remove="assets\icon256.png" />
+    <Resource Remove="assets\logo.png" />
+    <Resource Include="assets\background.jpg" LogicalName="assets/background.jpg" />
+    <Resource Include="assets\icon256.png" LogicalName="assets/icon256.png" />
+    <Resource Include="assets\logo.png" LogicalName="assets/logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="NAudio.Vorbis" />
+    <Reference Include="NAudio.WinMM" />
+    <Reference Include="NAudio.Core" />
+    <Reference Include="NorthpoleLauncher.Core" />
+  </ItemGroup>
+</Project>

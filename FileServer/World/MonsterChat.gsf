@@ -1,0 +1,558 @@
+/////////////////////////////////////////////////////////////////////////////////////																							
+/////////////																							/////////////
+/////////////								??Monster Chat Script ??						/////////////								
+/////////////						< Main Operator : Choi Ki-hoon >						/////////////											
+/////////////																							/////////////
+/////////////////////////////////////////////////////////////////////////////////////																							
+
+
+/////////////////////////////////////////////////////////////////////////////////////																							
+/////////////										Function List									/////////////				
+/////////////////////////////////////////////////////////////////////////////////////																							
+
+void MonsterChat(int, int, int, int, int, string); // KID, MonsterAction, Monster SkillsID, Chattingtypes, Probability, ChattingMessage
+
+/////////////////////////////////////////////////////////////////////////////////////																							
+
+
+/////////////////////////////////////////////////////////////////////////////////////																				
+/////////////										Definition										/////////////
+/////////////////////////////////////////////////////////////////////////////////////  																				
+//																				
+//		Action ID																		
+//																				
+//		General attack			0															
+//		When get attacked by generalattack	1																	
+//		When you attak with skillattack		2																
+//		When you get attacked with skillattack	3																	
+//		when you attack with ChriAttack		4																
+//		when you get attacked with ChriAttack	5																	
+//		Lisphone				6														
+//		Death					7													
+//																				
+/////////////////////////////////////////////////////////////////////////////////////							
+//							
+//		Chatting ID					
+//							
+//		common Knowledge			255
+//		General					0
+//		Screaming				7	
+//							
+/////////////////////////////////////////////////////////////////////////////////////							
+//							
+//		Skill ID					
+//							
+//		All Skill			=0xFFFF		
+//							
+/////////////////////////////////////////////////////////////////////////////////////							
+//							
+//		$KILLERNAME$		Substitute with killer(monster) name. It's only possible when Action ID matches number 7(death) 	
+//		$ATTNAME$			"substitute with hitter(monster) name. It's only possible when Action ID matches number 1, 3, 5(when you get hit)"
+//		$DEFNAME$			"substitute with player name who've got hit(monster). It's only possible when Action ID matches number  0, 2, 4 (when you hit) (When there are many players who got hitten, it's random)"
+//					
+//		"KID, Monster Action, Monster skill ID, When the chatting kinds are same kind, calculate the probability by adding them together."			
+//					
+/////////////////////////////////////////////////////////////////////////////////////					
+//					
+//		ex 			
+//					
+//		"MonsterChat(4001, 2, 0xFFFF, 0, 20, "Chatting message 1 when you use skill level");"			
+//		"MonsterChat(4001, 2, 0xFFFF, 0, 20, "Chatting message 2 when you use skill level");"			
+//		"(Choose random number from range of 1~100, Above message is from 1~20, below message is from 21~40. Other numbers do not say anything.) "			
+//					
+//					
+/////////////////////////////////////////////////////////////////////////////////////					
+
+
+/////////////////////////////////////////////////////////////////////////////////////																															
+/////////////											Notice										/////////////										
+/////////////////////////////////////////////////////////////////////////////////////  																															
+//																															//
+//	TS	1030																												//	
+//	9/13/2004	Operator Choi Ki-hoon																			//										
+//	1. Dialog modification																										//				
+//	2. Shout -> chatting kind modificaiton by common knowledge																		//												
+//																															//
+/////////////////////////////////////////////////////////////////////////////////////																															
+/////////////											TS-1230	 									/////////////
+/////////////////////////////////////////////////////////////////////////////////////
+//																															//
+//	2005-01-04 Operatoe Choi Ki-hoon																		//
+//	1. Speech of Brute, Fallen Archfiend added																				//
+//																															//
+/////////////////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////																															
+/////////////									Named Monster									/////////////
+/////////////////////////////////////////////////////////////////////////////////////																		
+
+
+
+//Merman
+MonsterChat(1, 4, 0, 0, 10, "Please !! Don't Kill me !");
+MonsterChat(1, 4, 0, 0, 10, "T.T why you want to bully me? Fuck You! I hate You!");
+MonsterChat(1, 4, 0, 0, 50, "T.T why you want to bully me? Fuck You! I hate You!");
+MonsterChat(1, 4, 0, 0, 50, "$DEFNAME$, i hate you.");
+MonsterChat(1, 7, 0, 0, 100, "No!!!- $KILLERNAME$, i hate you!");
+
+//Three Headed Snake
+MonsterChat(50001, 6, 0, 255, 100, "A Three Headed Snake slithers out of the muck .");
+MonsterChat(50001, 2, 0xFFFF, 0, 10, "Kahahh-");
+MonsterChat(50001, 2, 0xFFFF, 0, 10, "Kahaa- kahaa-");
+MonsterChat(50001, 4, 0, 0, 50, "Kiahaa-");
+MonsterChat(50001, 4, 0, 0, 50, "Kiahhha-");
+MonsterChat(50001, 7, 0, 7, 100, "ahhhaa..$KILLERNAME$..");
+MonsterChat(50001, 7, 0, 255, 100, "[$KILLERNAME$] has defeated the Three Headed snake.");		
+
+//Brute
+MonsterChat(50002, 6, 0, 255, 100, "The infamous monster [Brute] has appeared!");
+MonsterChat(50002, 2, 0xFFFF, 0, 10, "Maybe now, you puny little ants will run away. If you know what's good for you.");
+MonsterChat(50002, 2, 0xFFFF, 0, 10, "Never fear, antling. You won't feel a thing. I will give you instant death!");
+MonsterChat(50002, 4, 0, 0, 50, "What? What are these swarming ants?!");
+MonsterChat(50002, 4, 0, 0, 50, "Don't you make Brute angry!");
+MonsterChat(50002, 7, 0, 7, 100, "AGH! The pain! I ?hurt ?and welcome darkness ?$KILLERNAME$... so impossibly strong ...");
+MonsterChat(50002, 7, 0, 255, 100, "Master [$KILLERNAME$], you have defeated the [Brute] who has terrorized the South Nohnuut Field.");
+
+//Ancient Guardian																		
+MonsterChat(50003, 6, 0, 255, 100, "Your blood runs cold as an Ancient Guardian steps foot .");
+MonsterChat(50003, 2, 0xFFFF, 0, 10, "$DEFNAME$ you can not.. proceed.. any further..");
+MonsterChat(50003, 2, 0xFFFF, 0, 10, "$DEFNAME$ on your knees... Bow to me, fool!");
+MonsterChat(50003, 4, 0, 0, 50, "You shall not pass.");
+MonsterChat(50003, 4, 0, 0, 50, "I am the guardian of this foul land.");									
+MonsterChat(50003, 7, 0, 7, 100, "I won't die, not now.");										
+MonsterChat(50003, 7, 0, 255, 100, "[$KILLERNAME$] has defeated the Ancient Guardian in the Woods of Death.");
+
+//Nymbus						
+MonsterChat(50004, 6, 0, 255, 100, "A proclaimed deity has been summoned in this land.");
+MonsterChat(50004, 2, 0xFFFF, 0, 30, "Those that trespass this land will be slayed.");
+MonsterChat(50004, 4, 0, 0, 50, "A shallow grave does not welcome $DEFNAME$.");
+MonsterChat(50004, 7, 0, 7, 100, "..$KILLERNAME$ I will remember ..It's temporary seperation from my ground.");
+MonsterChat(50004, 7, 0, 255, 100, "Vengeance will be returned one day, $KILLERNAME$");
+
+//Ocelot Windigo
+MonsterChat(50005, 6, 0, 255, 100, "Ocelot Windigo has been spotted .");
+MonsterChat(50005, 2, 0xFFFF, 0, 10, "Hahaha, you better run!");
+MonsterChat(50005, 2, 0xFFFF, 0, 10, "I won't be easy on you even you cry!");
+MonsterChat(50005, 4, 0, 0, 50, "Let me make you on your knee before me!");
+MonsterChat(50005, 4, 0, 0, 50, "$DEFNAME$, I will defeat you soon with my powerful attack!");
+MonsterChat(50006, 7, 0, 7, 100, "$KILLERNAME$ you go first and wait for me.");
+MonsterChat(50005, 7, 0, 255, 100, "Uhhg, $KILLERNAME$. You are strong..");
+
+//Death Bringer
+MonsterChat(50006, 6, 0, 255, 100, "Death Bringer has entered .");
+MonsterChat(50006, 2, 0xFFFF, 0, 10, "$DEFNAME$ why don't you sacrifice yourself?");
+MonsterChat(50006, 2, 0xFFFF, 0, 10, "$DEFNAME$ death comes quickly. Let me help you.");
+MonsterChat(50006, 4, 0, 0, 50, "The Dimensional Portal is cracking.");
+MonsterChat(50006, 4, 0, 0, 50, "Do you want to go with me to the Dimension of Death?");
+MonsterChat(50006, 7, 0, 7, 100, "$KILLERNAME$ you go first and wait for me.");
+MonsterChat(50006, 7, 0, 255, 100, "[$KILLERNAME$] has defeated Death Bringer.");
+
+//Queen Of Pain
+MonsterChat(50007, 6, 0, 255, 100, "Queen of Pain stares coldly towards your general direction.");
+MonsterChat(50007, 2, 0xFFFF, 0, 10, "$DEFNAME$ you have a soft body, let me have a bite.");
+MonsterChat(50007, 2, 0xFFFF, 0, 10, "$DEFNAME$ shall I send you to the Dimension of Death?");
+MonsterChat(50007, 4, 0, 0, 50, "You are not pleasing me as much as I expected... You bore me.");
+MonsterChat(50007, 4, 0, 0, 50, "Is that all you've got?");
+MonsterChat(50007, 7, 0, 7, 100, "$KILLERNAME$ I welcome this feeling any time...");
+MonsterChat(50007, 7, 0, 255, 100, "[$KILLERNAME$] has defeated Queen of Pain.");
+
+//Smoldering Death
+MonsterChat(50008, 6, 0, 255, 100, "Smoldering Death reveals itself .");
+MonsterChat(50008, 2, 0xFFFF, 0, 10, " $DEFNAME$ don't you run away, I will slay you very soon.");
+MonsterChat(50008, 2, 0xFFFF, 0, 10, "HAHAHA. $DEFNAME$ You aren't giving up already, are you?");
+MonsterChat(50008, 4, 0, 0, 50, "HAHAHA. I like weaklings. I can play with you as much as I want!");
+MonsterChat(50008, 4, 0, 0, 50, "HAHA. $DEFNAME$, you are not hurt, are you?");
+MonsterChat(50008, 7, 0, 7, 100, "$KILLERNAME$, I have put a curse on your bloodline!");
+MonsterChat(50008, 7, 0, 255, 100, "[$KILLERNAME$] has defeated Smoldering Death.");
+
+//Fallen Archfiend
+MonsterChat(50009, 6, 0, 255, 100, "The [Fallen Archfiend] has appeared within the Collapsed Dimensional Gateway.");
+MonsterChat(50009, 2, 0xFFFF, 0, 10, "A body without spirit..");
+MonsterChat(50009, 2, 0xFFFF, 0, 10, "Disappear a flash of pain!");
+MonsterChat(50009, 4, 0, 0, 50, "Ah, weakling. You waste what little time you have left! It makes me happy to see you squirm within my grasp!");
+MonsterChat(50009, 4, 0, 0, 50, "My wickedness is even stronger than I have imagined!");
+MonsterChat(50009, 7, 0, 7, 100, "$KILLERNAME$ - Do not think that the evil of my dimension is forever exorcised with my defeat!");
+MonsterChat(50009, 7, 0, 255, 100, "Master [$KILLERNAME$], you have defeated the [Fallen Archfiend] within the Collapsed Dimensional Gateway.");
+
+//Mini Ancient Guardian
+MonsterChat(50010, 6, 0, 255, 100, "Mini Ancient Guardian returned !!!!!!! .");
+MonsterChat(50010, 2, 0xFFFF, 0, 10, "You aint stronger then me!! let me proof it!!");
+MonsterChat(50010, 2, 0xFFFF, 0, 10, "I migth be Little but that doesnt mean i cant hurt you!! haha.");
+MonsterChat(50010, 7, 0, 7, 100, "[$KILLERNAME$] has defeated the [Mini Ancient Guardian].");
+MonsterChat(50010, 7, 0, 255, 100, "[$KILLERNAME$] has defeated the [Mini Ancient Guardian].");
+
+//Mini Nymbus
+MonsterChat(50011, 6, 0, 255, 100, "Mini Nymbus returned !!!!!!! .");
+MonsterChat(50011, 2, 0xFFFF, 0, 10, "You aint stronger then me!! let me proof it!!");
+MonsterChat(50011, 2, 0xFFFF, 0, 10, "I migth be Little but that doesnt mean i cant hurt you!! haha.");
+MonsterChat(50011, 7, 0, 7, 100, "[$KILLERNAME$] has defeated the [Mini Nymbus].");
+MonsterChat(50011, 7, 0, 255, 100, "[$KILLERNAME$] has defeated the [Mini Nymbus].");
+
+//Mini Ocelot Windigo
+MonsterChat(50012, 6, 0, 255, 100, "Mini Ocelot windigo returned !!!!!!! .");
+MonsterChat(50012, 2, 0xFFFF, 0, 10, "You aint stronger then me!! let me proof it!!");
+MonsterChat(50012, 2, 0xFFFF, 0, 10, "I migth be Little but that doesnt mean i cant hurt you!! haha.");
+MonsterChat(50012, 7, 0, 7, 100, "[$KILLERNAME$] has defeated the [Mini Ocelot Windigo].");
+MonsterChat(50012, 7, 0, 255, 100, "[$KILLERNAME$] has defeated the [Mini Ocelot Windigo].");
+
+//Mini Death Bringer
+MonsterChat(50013, 6, 0, 255, 100, "Mini Death Bringer returned !!!!!!! .");
+MonsterChat(50013, 2, 0xFFFF, 0, 10, "You aint stronger then me!! let me proof it!!");
+MonsterChat(50013, 2, 0xFFFF, 0, 10, "I migth be Little but that doesnt mean i cant hurt you!! haha.");
+MonsterChat(50013, 7, 0, 7, 100, "[$KILLERNAME$] has defeated the [Mini Death Bringer].");
+MonsterChat(50013, 7, 0, 255, 100, "[$KILLERNAME$] has defeated the [Mini Death Bringer].");
+
+//Mini Queen Of Pain
+MonsterChat(50014, 6, 0, 255, 100, "Mini Queen of Pain returned !!!!!!! .");
+MonsterChat(50014, 2, 0xFFFF, 0, 10, "You aint stronger then me!! let me proof it!!");
+MonsterChat(50014, 2, 0xFFFF, 0, 10, "I migth be Little but that doesnt mean i cant hurt you!! haha.");
+MonsterChat(50014, 7, 0, 7, 100, "[$KILLERNAME$] has defeated the [Mini Queen Of Pain].");
+MonsterChat(50014, 7, 0, 255, 100, "[$KILLERNAME$] has defeated the [Mini Queen Of Pain].");
+
+//Mini Smoldering Death
+MonsterChat(50015, 6, 0, 255, 100, "Mini Smoldering Death returned !!!!!!! .");
+MonsterChat(50015, 2, 0xFFFF, 0, 10, "You aint stronger then me!! let me proof it!!");
+MonsterChat(50015, 2, 0xFFFF, 0, 10, "I migth be Little but that doesnt mean i cant hurt you!! haha.");
+MonsterChat(50015, 7, 0, 7, 100, "[$KILLERNAME$] has defeated the [Mini Smoldering Death].");
+MonsterChat(50015, 7, 0, 255, 100, "[$KILLERNAME$] has defeated the [Mini Smoldering Death].");
+
+// Mini Fallen Archfield
+MonsterChat(50016, 6, 0, 255, 100, "Mini Fallen Archfield returned !!!!!!! .");
+MonsterChat(50016, 2, 0xFFFF, 0, 10, "You aint stronger then me!! let me proof it!!");
+MonsterChat(50016, 2, 0xFFFF, 0, 10, "I migth be Little but that doesnt mean i cant hurt you!! haha.");
+MonsterChat(50016, 7, 0, 7, 100, "[$KILLERNAME$] has defeated the [Mini Fallen Archfield].");
+MonsterChat(50016, 7, 0, 255, 100, "[$KILLERNAME$] has defeated the [Mini Fallen Archfield].");
+
+//Giant Ancient Guardian
+MonsterChat(50017, 6, 0, 255, 100, "Giant Ancient Guardian Has Spawn !!!!!!! .");
+MonsterChat(50017, 4, 0, 0, 50, "hahahaha. $DEFNAME$, you are to noob to kill me !!");
+MonsterChat(50017, 2, 0xFFFF, 0, 10, "Do you think you can beat me..?");
+MonsterChat(50017, 2, 0xFFFF, 0, 10, "You cant kill this Giant!! haha!!.");
+MonsterChat(50017, 7, 0, 7, 100, "$KILLERNAME$- Don't think this will be the end..");
+MonsterChat(50017, 7, 0, 255, 100, "[$KILLERNAME$] has defeated the [Giant Deadly Skeleton].");
+
+//Giant Nymbus
+MonsterChat(50018, 6, 0, 255, 100, "Giant Nymbus has Spawn !!!!!!!.");
+MonsterChat(50018, 4, 0, 0, 50, "hahahaha. $DEFNAME$, you are to noob to kill me !!");
+MonsterChat(50018, 2, 0xFFFF, 0, 10, "Do you think you can beat me..?");
+MonsterChat(50018, 2, 0xFFFF, 0, 10, "You cant kill this Giant!! haha!!.");
+MonsterChat(50018, 7, 0, 7, 100, "$KILLERNAME$- Don't think this will be the end..");
+MonsterChat(50018, 7, 0, 255, 100, "[$KILLERNAME$] has defeated the [Giant Nymbus].");
+
+//Giant Ocelot Windigo
+MonsterChat(50019, 6, 0, 255, 100, "Giant Ocelot Windigo has Spawn !!!!!!!.");
+MonsterChat(50019, 4, 0, 0, 50, "hahahaha. $DEFNAME$, you are to noob to kill me !!");
+MonsterChat(50019, 2, 0xFFFF, 0, 10, "Do you think you can beat me..?");
+MonsterChat(50019, 2, 0xFFFF, 0, 10, "You cant kill this Giant!! haha!!.");
+MonsterChat(50019, 7, 0, 7, 100, "$KILLERNAME$- Don't think this will be the end..");
+MonsterChat(50019, 7, 0, 255, 100, "[$KILLERNAME$] has defeated the [Giant Ocelot Windigo].");
+
+//Giant Death Bringer
+MonsterChat(50020, 6, 0, 255, 100, "Giant Death Bringer has Spawn !!!!!!!.");
+MonsterChat(50020, 4, 0, 0, 50, "hahahaha. $DEFNAME$, you are to noob to kill me !!");
+MonsterChat(50020, 2, 0xFFFF, 0, 10, "Do you think you can beat me..?");
+MonsterChat(50020, 2, 0xFFFF, 0, 10, "You cant kill this Giant!! haha!!.");
+MonsterChat(50020, 7, 0, 7, 100, "$KILLERNAME$- Don't think this will be the end..");
+MonsterChat(50020, 7, 0, 255, 100, "[$KILLERNAME$] has defeated the [Giant Death Bringer].");
+
+//Giant Queen Of Pain
+MonsterChat(50021, 6, 0, 255, 100, "Giant Queen Of Pain has Spawn !!!!!!!.");
+MonsterChat(50021, 4, 0, 0, 50, "hahahaha. $DEFNAME$, you are to noob to kill me !!");
+MonsterChat(50021, 2, 0xFFFF, 0, 10, "Do you think you can beat me..?");
+MonsterChat(50021, 2, 0xFFFF, 0, 10, "You cant kill this Giant!! haha!!.");
+MonsterChat(50021, 7, 0, 7, 100, "$KILLERNAME$- Don't think this will be the end..");
+MonsterChat(50021, 7, 0, 255, 100, "[$KILLERNAME$] has defeated the [Giant Queen Of Pain].");
+
+//Giant Smoldering Death
+MonsterChat(50022, 6, 0, 255, 100, "Giant Smoldering Death has Spawn !!!!!!!.");
+MonsterChat(50022, 4, 0, 0, 50, "hahahaha. $DEFNAME$, you are to noob to kill me !!");
+MonsterChat(50022, 2, 0xFFFF, 0, 10, "Do you think you can beat me..?");
+MonsterChat(50022, 2, 0xFFFF, 0, 10, "You cant kill this Giant!! haha!!.");
+MonsterChat(50022, 7, 0, 7, 100, "$KILLERNAME$- Don't think this will be the end..");
+MonsterChat(50022, 7, 0, 255, 100, "[$KILLERNAME$] has defeated the [Giant Smoldering Death].");
+
+//Giant Fallen Archfield
+MonsterChat(50023, 6, 0, 255, 100, "[Giant Fallen Archfield] has arrive to our land .");
+MonsterChat(50023, 2, 0xFFFF, 0, 10, "Do you think you can beat me..?");
+MonsterChat(50023, 2, 0xFFFF, 0, 10, "You cant kill this Giant!! haha!!.");
+MonsterChat(50023, 4, 0, 0, 50, "imposible you can go this far..");
+MonsterChat(50023, 4, 0, 0, 50, "i will kill you ~~.");
+MonsterChat(50023, 7, 0, 7, 100, "$KILLERNAME$- Don't think this will be the end..");
+MonsterChat(50023, 7, 0, 255, 100, "[$KILLERNAME$] has defeated the [Giant Fallen Archfield].");
+
+//Gorep King
+MonsterChat(50024, 6, 0, 255, 100, "The earth shakes, [Gorep King] has been unleashed.");
+MonsterChat(50024, 2, 0xFFFF, 0, 10, "I can't be controlled!");
+MonsterChat(50024, 2, 0xFFFF, 0, 10, "$DEFNAME$ are you my Master?");
+MonsterChat(50024, 4, 0, 0, 50, "I can crush you with my bare foot!");
+MonsterChat(50024, 4, 0, 0, 50, "This is just a waste of time, let me go you fools!");
+MonsterChat(50024, 7, 0, 7, 100, "NO! $KILLERNAME$");
+MonsterChat(50024, 7, 0, 255, 100, "I'm going back to my Master now, [$KILLERNAME$]");
+
+//Medusa
+MonsterChat(50025, 6, 0, 255, 100, "[Medusa] spreads Terror !");
+MonsterChat(50025, 2, 0xFFFF, 0, 10, "Look in my eyes $DEFNAME$");
+MonsterChat(50025, 2, 0xFFFF, 0, 10, "The myth of Perseus shall be felt upon you!");
+MonsterChat(50025, 4, 0, 0, 50, "Scream my name, and I shall be mercyful!");
+MonsterChat(50025, 7, 0, 7, 100, "Terror will doom you $KILLERNAME$!");
+MonsterChat(50025, 7, 0, 255, 100, "Arrghh!! [$KILLERNAME$] !!!");
+
+//Underbog
+MonsterChat(50026, 6, 0, 255, 100, "Underbog has revealed itself !");
+MonsterChat(50026, 2, 0xFFFF, 0, 10, "You'll not pass this line $DEFNAME$!");
+MonsterChat(50026, 4, 0, 0, 50, "All the TOB belong to me, and to no-one else.");
+MonsterChat(50026, 7, 0, 7, 100, "[$KILLERNAME$] has defeated me, mercy will be pittyful.");
+MonsterChat(50026, 7, 0, 255, 100, "[$KILLERNAME$] has defeated me, mercy will be pittyful.");
+
+//Agrono
+MonsterChat(50027, 6, 0, 255, 100, "You feel a shiver run down your spine, when agrono leave's his cave.");
+MonsterChat(50027, 4, 0, 0, 50, " $DEFNAME$ ..");
+MonsterChat(50027, 4, 0, 0, 50, "No earthling can kill me!I a'm A KING OF ALL BOSSES!");
+MonsterChat(50027, 4, 0, 0, 50, "Huahaha, you're all so weak!");
+MonsterChat(50027, 7, 0, 7, 100, "[$KILLERNAME$] Went back in to his dark hole.");
+MonsterChat(50027, 7, 0, 255, 100, "[$KILLERNAME$] has defeated the dreaded Agrono.");
+
+//Baphomet
+MonsterChat(50028, 6, 0, 255, 100, "Lord [Baphomet] has stept trough the port of Hell!");
+MonsterChat(50028, 2, 0xFFFF, 0, 10, "You shall worship me $DEFNAME$!");
+MonsterChat(50028, 2, 0xFFFF, 0, 10, "There's only 1 ruler, and that's Satan!");
+MonsterChat(50028, 4, 0, 0, 50, "Justice will be witnissed by many, once again!");
+MonsterChat(50028, 4, 0, 0, 50, "Shall I take your soul now $DEFNAME$?");
+MonsterChat(50028, 7, 0, 7, 100, "$KILLERNAME$ you caught me by suprise..");
+MonsterChat(50028, 7, 0, 255, 100, "No mortal shall ever set foot upon this foolish land [$KILLERNAME$]!");
+
+//Gul'Dan
+MonsterChat(50029, 6, 0, 255, 100, "All hail [Gul'Dan], the Barrick Emporer!");
+MonsterChat(50029, 2, 0xFFFF, 0, 10, "The sun for sorrow will be seen upon you head.");
+MonsterChat(50029, 2, 0xFFFF, 0, 10, "I'll not endure you!");
+MonsterChat(50029, 4, 0, 0, 50, "Be quiet, or--More light, more light! For shame!");
+MonsterChat(50029, 4, 0, 0, 50, "Saints do not move!");
+MonsterChat(50029, 7, 0, 7, 100, "Ay, so I fear..");
+MonsterChat(50029, 7, 0, 255, 100, "[$KILLERNAME$] What's this? what's this?");
+
+//Elune
+MonsterChat(50030, 6, 0, 255, 100, "[Elune] has step foots .");
+MonsterChat(50030, 2, 0xFFFF, 0, 10, "Ahh.. I can't feel anything!");
+MonsterChat(50030, 2, 0xFFFF, 0, 10, "I will bite thee by the ear for that $DEFNAME$?");
+MonsterChat(50030, 4, 0, 0, 50, "This is my territory!");
+MonsterChat(50030, 7, 0, 7, 100, "Why $KILLERNAME$?");
+MonsterChat(50030, 7, 0, 255, 100, "[$KILLERNAME$] Feel the cold of my last breath..");
+
+//The Butcher
+MonsterChat(50031, 6, 0, 255, 100, "[The Butcher] has been spotted .");
+MonsterChat(50031, 2, 0xFFFF, 0, 10, "Your corpse will burn in hell!");
+MonsterChat(50031, 2, 0xFFFF, 0, 10, "My mask resamples pain, so much pain..");
+MonsterChat(50031, 4, 0, 0, 50, "Shall I cut you slow and nicely $DEFNAME$?");
+MonsterChat(50031, 7, 0, 7, 100, "We'll see eachother, very soon $KILLERNAME$!");
+MonsterChat(50031, 7, 0, 255, 100, "[$KILLERNAME$] slayed me!");
+
+//Scorpion King
+MonsterChat(50032, 6, 0, 255, 100, "[Scorpion King] has digged a way out of his grave!");
+MonsterChat(50032, 2, 0xFFFF, 0, 10, "My Ancle will let u die, painfully and slow, haha!$DEFNAME$!");
+MonsterChat(50032, 2, 0xFFFF, 0, 10, "NO! It can't be!");
+MonsterChat(50032, 4, 0, 0, 50, "Stop trying $DEFNAME$ you can't hurt me!");
+MonsterChat(50032, 7, 0, 7, 100, "WAhaaaaaaa IMPOSSIBLE!");
+MonsterChat(50032, 7, 0, 255, 100, "I tell you I will digg my way out again!!...$KILLERNAME$..");
+
+//Ichzilla
+MonsterChat(50033, 6, 0, 255, 100, "[Ichzilla] has surfaced .");
+MonsterChat(50033, 4, 0, 0, 50, "Only the Emporer can slay me!");
+MonsterChat(50033, 4, 0, 0, 50, "You will not hurt us anymore!");
+MonsterChat(50033, 4, 0, 0, 50, "Leave me alone!");
+MonsterChat(50033, 4, 0, 7, 50, " $DEFNAME$ you're not worth my time!");
+MonsterChat(50033, 7, 0, 255, 100, "Flee my brothers, I cannot protect you from [$KILLERNAME$].");
+
+//Turkasaurus
+MonsterChat(50034, 6, 0, 255, 100, "The [Turkasaurus] has emerged among the Ancient Ostrisaurus.");
+MonsterChat(50034, 2, 0xFFFF, 0, 10, "You no hurt herd. Your kind bother us no more.");
+MonsterChat(50034, 2, 0xFFFF, 0, 10, "Gobble Gobble!!!");
+MonsterChat(50034, 4, 0, 0, 50, "You will not hurt us Ostrisaurus again!!!");
+MonsterChat(50034, 4, 0, 0, 50, "Dat do not hurt!");
+MonsterChat(50034, 7, 0, 7, 100, "$KILLERNAME$ - Gobble!!! Why???????.");
+MonsterChat(50034, 7, 0, 255, 100, "Master [$KILLERNAME$], you have defeated the [Turkasaurus].");
+
+//Sephiroth
+MonsterChat(50035, 6, 0, 255, 100, "[Sephiroth] has been resurrected.");
+MonsterChat(50035, 2, 0xFFFF, 0, 10, "I do not belong here!");
+MonsterChat(50035, 2, 0xFFFF, 0, 10, "Your nothing more then fresh air to me $DEFNAME$.");
+MonsterChat(50035, 4, 0, 0, 50, "$ATTNAME$ you can't hurt me, fool!");
+MonsterChat(50035, 4, 0, 0, 50, "Ahwahahaaaaaa that must hurt eh $DEFNAME$!");
+MonsterChat(50035, 7, 0, 7, 100, "It's just a matter of time before this race extinct!");
+MonsterChat(50035, 7, 0, 255, 100, "[$KILLERNAME$] has defeated Sephiroth.");
+
+//Red Santa Boss
+MonsterChat(50101, 6, 0, 255, 100, "[Red Santa Boss] Returned to Ryl Northpole!!");
+MonsterChat(50101, 4, 0, 0, 50, "$ATTNAME$ its me... Red Santa !! Dont hurt me !!");
+MonsterChat(50101, 4, 0, 0, 50, "Wanna know what you get for Xmas $DEFNAME$? NOTHING!!");
+MonsterChat(50101, 7, 0, 7, 100, "$KILLERNAME$, you have destroyed me !!");
+MonsterChat(50101, 7, 0, 255, 100, "[$KILLERNAME$] has defeated me, rawrr..");
+
+//Pink Santa Boss
+MonsterChat(50102, 4, 0, 0, 50, "$ATTNAME$ its me... Pink Santa !! Dont hurt me !!");
+MonsterChat(50102, 4, 0, 0, 50, "Wanna know what you get for Xmas $DEFNAME$? NOTHING!!");
+MonsterChat(50102, 7, 0, 7, 100, "$KILLERNAME$, you have destroyed me !!");
+MonsterChat(50102, 7, 0, 255, 100, "[$KILLERNAME$] has defeated me, rawrr..");
+
+//Green Santa Boss
+MonsterChat(50103, 6, 0, 255, 100, "[Green Santa Boss] Returned to Ryl Northpole!!");
+MonsterChat(50103, 4, 0, 0, 50, "$ATTNAME$ its me...Green Santa !! Dont hurt me !!");
+MonsterChat(50103, 4, 0, 0, 50, "Wanna know what you get for Xmas $DEFNAME$? NOTHING!!");
+MonsterChat(50103, 7, 0, 7, 100, "$KILLERNAME$, you have destroyed me !!");
+MonsterChat(50103, 7, 0, 255, 100, "[$KILLERNAME$] has defeated me, rawrr..");
+
+//Blue Santa Boss
+MonsterChat(50104, 6, 0, 255, 100, "[Blue Santa Boss] Returned to Ryl Northpole!!");
+MonsterChat(50104, 4, 0, 0, 50, "$ATTNAME$ its me... Blue Santa !! Dont hurt me !!");
+MonsterChat(50104, 4, 0, 0, 50, "Wanna know what you get for Xmas $DEFNAME$? NOTHING!!");
+MonsterChat(50104, 7, 0, 7, 100, "$KILLERNAME$, you have destroyed me !!");
+MonsterChat(50104, 7, 0, 255, 100, "[$KILLERNAME$] has defeated me, rawrr..");
+
+//Purple Santa Boss
+MonsterChat(50105, 6, 0, 255, 100, "[Purple Santa Boss] Returned to Ryl Northpole!!");
+MonsterChat(50105, 4, 0, 0, 50, "$ATTNAME$ its me...Purple Santa !! Dont hurt me !!");
+MonsterChat(50105, 4, 0, 0, 50, "Wanna know what you get for Xmas $DEFNAME$? NOTHING!!");
+MonsterChat(50105, 7, 0, 7, 100, "$KILLERNAME$, you have destroyed me !!");
+MonsterChat(50105, 7, 0, 255, 100, "[$KILLERNAME$] has defeated me, rawrr..");
+
+//Yellow Santa Boss
+MonsterChat(50106, 6, 0, 255, 100, "[Yellow Santa Boss] Returned to Ryl Northpole!!");
+MonsterChat(50106, 4, 0, 0, 50, "$ATTNAME$ its me... Yellow Santa !! Dont hurt me !!");
+MonsterChat(50106, 4, 0, 0, 50, "Wanna know what you get for Xmas $DEFNAME$? NOTHING!!");
+MonsterChat(50106, 7, 0, 7, 100, "$KILLERNAME$, you have destroyed me !!");
+MonsterChat(50106, 7, 0, 255, 100, "[$KILLERNAME$] has defeated me, rawrr..");
+
+//Orenge Santa Boss
+MonsterChat(50107, 6, 0, 255, 100, "[Orenge Santa Boss] Returned to Ryl Northpole!!");
+MonsterChat(50107, 4, 0, 0, 50, "$ATTNAME$ its me... Orenge Santa !! Dont hurt me !!");
+MonsterChat(50107, 4, 0, 0, 50, "Wanna know what you get for Xmas $DEFNAME$? NOTHING!!");
+MonsterChat(50107, 7, 0, 7, 100, "$KILLERNAME$, you have destroyed me !!");
+MonsterChat(50107, 7, 0, 255, 100, "[$KILLERNAME$] has defeated me, rawrr..");
+
+//Boss Nianshou
+MonsterChat(4011, 6, 0, 255, 100, "Boss Nainshou has been spotted near Pirates Bay's.");
+MonsterChat(4011, 2, 0xFFFF, 0, 10, " You're tickling me $DEFNAME$, raawrr! ");
+MonsterChat(4011, 4, 0, 0, 50, "Rawrr, rawwrrr");
+MonsterChat(4011, 4, 0, 0, 50, "$DEFNAME$, rawrrrr...");
+MonsterChat(4011, 7, 0, 0, 100, "$KILLERNAME$, you'll never stop us!");
+MonsterChat(4011, 7, 0, 255, 100, "[$KILLERNAME$] has defeated me, rawrr..");
+
+//Trollbane
+MonsterChat(4012, 6, 0, 255, 100, "Fear the magic, Trollbane has set foot on Dark Carnevorn.");
+MonsterChat(4012, 2, 0xFFFF, 0, 10, "No one shall ever pass this line!");
+MonsterChat(4012, 4, 0, 0, 50, "You shall not worry, death will come quickly!");
+MonsterChat(4012, 4, 0, 0, 50, "Are you gettin' tired?");
+MonsterChat(4012, 7, 0, 0, 100, "Dominaton is only a matter of time!");
+MonsterChat(4012, 7, 0, 255, 100, "You'll be banished to the center of the earth for disobeying me $KILLERNAME$!");
+
+//Marshall
+MonsterChat(4013, 6, 0, 255, 100, "The lord has send me, [Marshall]");
+MonsterChat(4013, 2, 0xFFFF, 0, 10, "Show me what you got!");
+MonsterChat(4013, 2, 0xFFFF, 0, 10, "$DEFNAME$, my Lord will cut your head.");
+MonsterChat(4013, 4, 0, 0, 50, "READY, SET, GO!!");
+MonsterChat(4013, 4, 0, 0, 50, "Your a waste of air");
+MonsterChat(4013, 7, 0, 0, 100, "$KILLERNAME$ you faught well.");
+MonsterChat(4013, 7, 0, 255, 100, "Uhhh $KILLERNAME$...");
+
+//Anub'arak
+MonsterChat(4014, 6, 0, 255, 100, "[Anub'arak] spreads his magic all around Carnevorn!");
+MonsterChat(4014, 2, 0xFFFF, 0, 10, "I'm from Northrend, no earthling can touch me!");
+MonsterChat(4014, 2, 0xFFFF, 0, 10, "Magic? You never seen MAGIC!");
+MonsterChat(4014, 4, 0, 0, 50, "$DEFNAME$ I can taunt you blinded.");
+MonsterChat(4014, 7, 0, 0, 100, "$KILLERNAME$ my magic failed me.");
+MonsterChat(4014, 7, 0, 255, 100, "[$KILLERNAME$], I shall poof away.");
+
+//Blackhand
+MonsterChat(4015, 6, 0, 255, 100, "God ye good morrow says [Blackhand]!");
+MonsterChat(4015, 2, 0xFFFF, 0, 10, "Stop there, stop there.");
+MonsterChat(4015, 4, 0, 0, 50, "What, ho! apothecary!");
+MonsterChat(4015, 4, 0, 0, 50, "A sail, a sail!");
+MonsterChat(4015, 7, 0, 0, 100, "$KILLERNAME$ I say farewell!");
+MonsterChat(4015, 7, 0, 255, 100, "[$KILLERNAME$] A bawd, a bawd, a bawd! so ho!");
+
+//Grimtotem
+MonsterChat(4016, 6, 0, 255, 100, "[Grimtotem] has been resurrected.");
+MonsterChat(4016, 2, 0xFFFF, 0, 10, "I bring thee tidings of the prince's doom.");
+MonsterChat(4016, 2, 0xFFFF, 0, 10, "We'll exile you $DEFNAME$");
+MonsterChat(4016, 7, 0, 0, 100, "$KILLERNAME$ be patient, you'll follow soon.");
+MonsterChat(4016, 7, 0, 255, 100, "[$KILLERNAME$].. we'll see eachother, very soon.");
+
+//Death Bringer Mutant
+MonsterChat(4023, 6, 0, 255, 100, "Death Bringer has entered the Woods of Death.");
+MonsterChat(4023, 2, 0xFFFF, 0, 10, "$DEFNAME$ why don't you sacrifice yourself?");
+MonsterChat(4023, 2, 0xFFFF, 0, 10, "$DEFNAME$ death comes quickly. Let me help you.");
+MonsterChat(4023, 4, 0, 0, 50, "The Dimensional Portal is cracking.");
+MonsterChat(4023, 4, 0, 0, 50, "Do you want to go with me to the Dimension of Death?");
+MonsterChat(4023, 7, 0, 0, 100, "$KILLERNAME$ you go first and wait for me.");
+MonsterChat(4023, 7, 0, 255, 100, "[$KILLERNAME$] has defeated Death Bringer.");
+
+//Nzambi Mpungu
+MonsterChat(4024, 6, 0, 255, 100, "A ruthless soul has been resurrected on Dark Carnevorn.");
+MonsterChat(4024, 2, 0xFFFF, 0, 10, "But you are such small creature..");
+MonsterChat(4024, 4, 0, 0, 60, "Thou hast acted as one without a head, henceforth thou shall be headless.");
+MonsterChat(4024, 4, 0, 0, 20, "I cannot give $DEFNAME$ my Ring!");
+MonsterChat(4024, 4, 0, 0, 50, "You shall soon be part of me $DEFNAME$!");
+MonsterChat(4024, 4, 0, 0, 20, "Oh, see there, my slaves! Who is that?");
+MonsterChat(4024, 7, 0, 0, 100, "$KILLERNAME$ pity me.");
+MonsterChat(4024, 7, 0, 255, 100, "I doom all of you, especially you [$KILLERNAME$]!");
+
+//The Headless Swordsman
+MonsterChat(4027, 6, 0, 255, 100, "The Headless Swordsman has been ressurected in the Woods of Death.");
+MonsterChat(4027, 2, 0xFFFF, 0, 10, " $DEFNAME$..");
+MonsterChat(4027, 2, 0xFFFF, 0, 10, "I'm losing my patience with you $DEFNAME$");
+MonsterChat(4027, 4, 0, 0, 50, "Weakling..");
+MonsterChat(4027, 4, 0, 0, 50, "$DEFNAME$, you shall fear me!!");
+MonsterChat(4027, 7, 0, 0, 100, "$KILLERNAME$, My revenge will be witnessed by many!");
+MonsterChat(4027, 7, 0, 255, 100, "[$KILLERNAME$] has defeated the Headless Swordsman");
+
+//Asmodeus Phrim'Ker Lord
+MonsterChat(4028, 6, 0, 255, 100, "Tremble, Asmodeus has returned to rule this land once again.");
+MonsterChat(4028, 7, 0, 255, 100, "Blast? Impossible!! [$KILLERNAME$] how could you possibly have defeated me!!");
+
+//Ruler of Tartarus
+MonsterChat(4029, 6, 0, 255, 100, "[Ruler of Tartarus] has been spotted near Edin.");
+MonsterChat(4029, 2, 0xFFFF, 0, 10, "$DEFNAME$ your an fool!");
+MonsterChat(4029, 4, 0, 0, 50, "Why don't you just die $DEFNAME$.");
+MonsterChat(4029, 7, 0, 0, 100, "No mortal shall ever hurt us..me!");
+MonsterChat(4029, 7, 0, 255, 100, "[$KILLERNAME$] has defeated a Ruler of Tartarus.");
+
+//Forsaken Fel Arcanis
+MonsterChat(4030, 6, 0, 255, 100, "Fear shall be restored to this land.");
+MonsterChat(4030, 2, 0xFFFF, 0, 10, "Don't run, you cowards.");
+MonsterChat(4030, 2, 0xFFFF, 0, 10, "My guards will protect me on this foolish land!");
+MonsterChat(4030, 4, 0, 0, 50, "Guards!!! ");
+MonsterChat(4030, 4, 0, 0, 50, "$DEFNAME$ your attempts are meaningless, leave now!");
+MonsterChat(4030, 7, 0, 0, 100, "You should have listened to me $KILLERNAME$.");
+MonsterChat(4030, 7, 0, 255, 100, "[$KILLERNAME$] has defeated Forsaken Fel Arcanis ");
+
+//Gryphon
+MonsterChat(4032, 6, 0, 255, 100, "[Gryphon] has been spotted near Fungus Forest.");
+MonsterChat(4032, 2, 0xFFFF, 0, 10, "Your life belongs to me $DEFNAME$.");
+MonsterChat(4032, 4, 0, 0, 50, "What's this? You're trying to kill me??!??");
+MonsterChat(4032, 4, 0, 0, 50, "You don't scare me with your spells $DEFNAME$!");
+MonsterChat(4032, 7, 0, 255, 100, "[$KILLERNAME$] has defeated an Gryphon.");
+
+//Sirens
+MonsterChat(4033, 6, 0, 255, 100, "[Sirens] has been spotted near Roche Bridge.");
+MonsterChat(4033, 2, 0xFFFF, 0, 10, "I call Orpheus on you $DEFNAME$!");
+MonsterChat(4033, 2, 0xFFFF, 0, 10, "NO! It can't be!");
+MonsterChat(4033, 4, 0, 0, 50, "Stop trying $DEFNAME$ you can't hurt us!");
+MonsterChat(4033, 7, 0, 0, 100, "WAhaaaaaaa IMPOSSIBLE!");
+MonsterChat(4033, 7, 0, 255, 100, "[$KILLERNAME$] has defeated me.....");
+
+//Lamia
+MonsterChat(4034, 6, 0, 255, 100, "[Lamia] has been resurrected!");
+MonsterChat(4034, 2, 0xFFFF, 0, 10, "Baba-yaga!");
+MonsterChat(4034, 2, 0xFFFF, 0, 10, "$DEFNAME$ baba-ba-ba-yagaa-ba!");
+MonsterChat(4034, 4, 0, 0, 50, "I'm stuck...............ba-yaagaa-ba!");
+MonsterChat(4034, 7, 0, 0, 100, "I can no longer do this................baba-yaba!");
+MonsterChat(4034, 7, 0, 255, 100, "[$KILLERNAME$] yaaghaa-baha-ha!!.");
+
+//Nzambi
+MonsterChat(381, 4, 0, 0, 60, "Who has thus dared to disturb us.");
+MonsterChat(381, 4, 0, 0, 10, "I'll protect the Ring of Nzambi with my soul $DEFNAME$!");
+MonsterChat(381, 4, 0, 0, 30, "Strange! but I distinctly hear the beating of your soul!");
+
+//Soul of GP Bill
+MonsterChat(4201, 7, 0, 0, 100, "Master [$KILLERNAME$], you have destroyed the [Soul of GP Bill], and he can no longer reconstitute himself.");
